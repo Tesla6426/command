@@ -1,0 +1,18 @@
+name: command
+version: '${project.version}'
+main: net.txsla.command.Command
+api-version: '1.21'
+
+permissions :
+  command.testcommand:
+    description: "Allows player to set the server spawn"
+    default-permission: false
+    default: op
+
+commands:
+  testcommand:
+    description: "command for testing new features"
+    usage: "/testcommand"
+    aliases: []
+    permission: commands.testcommand
+    permission-message: "You do not have permission to use this command"
