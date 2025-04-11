@@ -9,10 +9,17 @@ public final class Command extends JavaPlugin {
     public void onEnable() {
         // Plugin startup logic
         saveDefaultConfig();
+        getLogger().info("Starting plugin...");
 
         // only register enabled commands
+        getLogger().info("Registering commands:");
         if (getConfig().getBoolean("testcommand.enabled")) {
             getCommand("testcommand").setExecutor(new testcommand());
+            getLogger().info("+ testcommand");
+        }
+        if (getConfig().getBoolean("gamemode.enabled")) {
+            getCommand("gamemode").setExecutor(new gamemode());
+            getLogger().info("+ gamemode");
         }
     }
 

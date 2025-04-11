@@ -8,6 +8,10 @@ permissions :
     description: "Allows player to set the server spawn"
     default-permission: false
     default: op
+  command.gamemode:
+    description: "Allows player to set their game mode"
+    default-permission: false
+    default: op
 
 commands:
   testcommand:
@@ -15,4 +19,10 @@ commands:
     usage: "/testcommand"
     aliases: []
     permission: commands.testcommand
+    permission-message: "You do not have permission to use this command"
+  gamemode:
+    description: "Change your game mode"
+    usage: "/gamemode <gamemode>"
+    aliases: [gms, gmc]
+    permission: command.gamemode
     permission-message: "You do not have permission to use this command"
