@@ -12,6 +12,14 @@ permissions :
     description: "Allows player to set their game mode"
     default-permission: false
     default: op
+  command.clear:
+    description: "Allows player to set their game mode"
+    default-permission: false
+    default: op
+  command.teleport:
+    description: "Allows player to set their game mode"
+    default-permission: false
+    default: op
 
 commands:
   testcommand:
@@ -26,3 +34,16 @@ commands:
     aliases: [gms, gmc]
     permission: command.gamemode
     permission-message: "You do not have permission to use this command"
+  clear:
+    description: "Clear your inventory"
+    usage: "/clear"
+    aliases: [ ]
+    permission: command.clear
+    permission-message: "You do not have permission to use this command"
+  teleport:
+    description: "Clear your inventory"
+    usage: "/teleport <x> <y> <z> <world>"
+    aliases: [ tp ]
+    permission: command.teleport
+    permission-message: "You do not have permission to use this command"
+

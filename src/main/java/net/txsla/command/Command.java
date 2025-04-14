@@ -12,15 +12,40 @@ public final class Command extends JavaPlugin {
         getLogger().info("Starting plugin...");
 
         // only register enabled commands
-        getLogger().info("Registering commands:");
+        getLogger().info("loading commands:");
+
+        // testcommand
         if (getConfig().getBoolean("testcommand.enabled")) {
             getCommand("testcommand").setExecutor(new testcommand());
             getLogger().info("+ testcommand");
+        }else {
+            getCommand("testcommand").setExecutor(new disabled());
         }
+
+        // gamemode
         if (getConfig().getBoolean("gamemode.enabled")) {
             getCommand("gamemode").setExecutor(new gamemode());
             getLogger().info("+ gamemode");
+        }else {
+            getCommand("gamemode").setExecutor(new disabled());
         }
+
+        // teleport
+        if (getConfig().getBoolean("teleport.enabled")) {
+            getCommand("teleport").setExecutor(new teleport());
+            getLogger().info("+ teleport");
+        }else {
+            getCommand("teleport").setExecutor(new disabled());
+        }
+
+        // clear
+        if (getConfig().getBoolean("clear.enabled")) {
+            getCommand("clear").setExecutor(new clear());
+            getLogger().info("+ clear");
+        }else {
+            getCommand("clear").setExecutor(new disabled());
+        }
+
     }
 
     @Override

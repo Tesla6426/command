@@ -23,19 +23,26 @@ public class gamemode implements CommandExecutor, TabExecutor {
             return false;
         }
 
+        Player p = (Player) sender;
+
         // switch for /gmc and /gms
         switch (label) {
             case "gmc":
-                ((Player) sender).setGameMode(GameMode.CREATIVE);
+                p.setGameMode(GameMode.CREATIVE);
                 sender.sendMessage("Set your game mode to Creative Mode");
                 return true;
             case "gms":
-                ((Player) sender).setGameMode(GameMode.SURVIVAL);
+                p.setGameMode(GameMode.SURVIVAL);
                 sender.sendMessage("Set your game mode to Survival Mode");
                 return true;
             default:
                 break;
         }
+
+        // DEBUG | REMOVE LATER
+        sender.sendMessage(label);
+
+
 
         // validate input
         if (args.length < 1) return false;
@@ -44,24 +51,24 @@ public class gamemode implements CommandExecutor, TabExecutor {
         switch (args[0]) {
             case "adventure":
             case "ADVENTURE":
-                ((Player) sender).setGameMode(GameMode.ADVENTURE);
+                p.setGameMode(GameMode.ADVENTURE);
                 sender.sendMessage("Set your game mode to Adventure Mode");
                 return true;
             case "creative":
             case "CREATIVE":
             case "c":
             case "C":
-                ((Player) sender).setGameMode(GameMode.CREATIVE);
+                p.setGameMode(GameMode.CREATIVE);
                 sender.sendMessage("Set your game mode to Creative Mode");
                 return true;
             case "spectator":
             case "SPECTATOR":
-                ((Player) sender).setGameMode(GameMode.SPECTATOR);
+                p.setGameMode(GameMode.SPECTATOR);
                 sender.sendMessage("Set your game mode to Spectator Mode");
                 return true;
             case "survival":
             case "SURVIVAL":
-                ((Player) sender).setGameMode(GameMode.SURVIVAL);
+                p.setGameMode(GameMode.SURVIVAL);
                 sender.sendMessage("Set your game mode to Survival Mode");
                 return true;
             default:

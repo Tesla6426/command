@@ -2,6 +2,7 @@
 
 # vanilla implementations
 # if there is no 'enabled:' option, then the command has not been implemented yet
+# the permission:"" tag is read only - changing it does nothing
 advancement:
 attribute:
 ban:
@@ -11,6 +12,8 @@ ban-ip:
 banlist:
 bossbar:
 clear:
+  enabled: true
+  permission: 'command.clear'
 clone:
 damage:
 data:
@@ -29,6 +32,7 @@ forceload:
 function:
 gamemode:
   enabled: false
+  permission: 'command.gamemode'
 gamerule:
 give:
 help:
@@ -74,6 +78,8 @@ tag:
 team:
 teammsg:
 teleport:
+  enabled: true
+  permission: 'command.teleport'
 tell:
 tellraw:
 tick:
@@ -85,8 +91,6 @@ w:
 weather:
 whitelist:
 worldborder:
-
-
 
 testcommand:
   enabled: true
