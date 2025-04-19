@@ -14,12 +14,12 @@ public final class Command extends JavaPlugin {
         // only register enabled commands
         getLogger().info("loading commands:");
 
-        // testcommand
-        if (getConfig().getBoolean("testcommand.enabled")) {
-            getCommand("testcommand").setExecutor(new testcommand());
-            getLogger().info("+ testcommand");
+        // clear
+        if (getConfig().getBoolean("clear.enabled")) {
+            getCommand("clear").setExecutor(new clear());
+            getLogger().info("+ clear");
         }else {
-            getCommand("testcommand").setExecutor(new disabled());
+            getCommand("clear").setExecutor(new disabled());
         }
 
         // gamemode
@@ -38,14 +38,13 @@ public final class Command extends JavaPlugin {
             getCommand("teleport").setExecutor(new disabled());
         }
 
-        // clear
-        if (getConfig().getBoolean("clear.enabled")) {
-            getCommand("clear").setExecutor(new clear());
-            getLogger().info("+ clear");
+        // testcommand
+        if (getConfig().getBoolean("testcommand.enabled")) {
+            getCommand("testcommand").setExecutor(new testcommand());
+            getLogger().info("+ testcommand");
         }else {
-            getCommand("clear").setExecutor(new disabled());
+            getCommand("testcommand").setExecutor(new disabled());
         }
-
     }
 
     @Override
